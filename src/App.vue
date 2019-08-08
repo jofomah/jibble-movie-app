@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row">
+      <MovieList class="column"/>
+      <FavouriteList class="column"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MovieList from './components/MovieList.vue'
+import FavouriteList from './components/FavouriteList.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    MovieList,
+    FavouriteList
   }
 }
 </script>
@@ -24,5 +28,28 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+
+@media screen and (max-width: 479px) {
+  .column {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.row:after {
+  display: table;
+  clear: both;
 }
 </style>
